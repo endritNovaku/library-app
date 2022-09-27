@@ -10,14 +10,8 @@ const Book = new Schema(
         },
         description: {type: String, required: true},
         author: {type: String, required: true},
-        img: {
-            data: Buffer,
-            contentType: String
-        },
-        content: {
-            data: Buffer,
-            contentType: String
-        }
+        img: {type: String, required: true},
+        public_url: {type: String, required: true}
     },
     { timestamps: true },
 )

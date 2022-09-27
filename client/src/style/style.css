@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+
+#navbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient(to left bottom, rgb(114, 109, 109), rgb(0, 0, 0));
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dropdown {
+    position: absolute;
+    right: 100px;
+    bottom:100px;
+    z-index: 1;
+  }
+
+  .category {
+    color: white;
+    cursor: pointer;
+  }
+
+  #categories {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    padding-left: 25px;
+  }
+  .checkbtn {
+    font-size: 30px;
+    color: white;
+    float: left;
+    line-height: 60px;
+    cursor: pointer;
+    
+    margin-bottom: -10px;
+  }
+  
+  .categoryLogo{
+    background-color: white;
+    width: 30px;
+    height: 6px;
+    margin: 4px;
+  }
+
+  .checkbtn {
+    display: block;
+  }
+    ul{
+    position: fixed;
+    width: 100%;
+    background-image: linear-gradient(to left bottom, rgb(114, 109, 109), rgb(0, 0, 0));
+    top: 60px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+    z-index: 1;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0px;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+  
+  #check{
+    display: none
+  }
+  
+  #bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: linear-gradient(to left bottom, rgb(114, 109, 109), rgb(0, 0, 0));
+  }
+  #library{
+    box-sizing: border-box;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: linear-gradient(to left bottom, rgb(114, 109, 109), rgb(0, 0, 0));
+  }
+
+  #link{
+    color: rgb(250, 250, 252);
+    text-decoration: none;
+  }
+
+  #theImg {
+    width: 25vh;
+    height: 20vh;
+  }
+
+  #libraryPos{
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 99.7%;
+    min-height: 100%;
+    border: 2px solid black;
+    
+  }
+
+  .src{
+    width: 20vh;
+  }
+
+  .anime{
+    background-color: rgba(121, 110, 110, 0.171);
+    margin: 10px;
+    width: 160px;
+  }
+  
+  .anime:hover{
+    box-shadow: 5px 5px 5px rgba(37, 33, 33, 0.863);
+  }
+  
+  #libImg{
+    width:150px;
+    height: 200px;
+  }
+  
+  .categories{
+    font-size: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    
+  }
+  
+  .title{
+    margin-top: -5px;
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .srcAnim{
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-image: linear-gradient(to left bottom, rgb(114, 109, 109), rgb(0, 0, 0));
+  }
+
+  .searchOutput{
+    background-color: white;
+    position: absolute;
+    top: 45px;
+    z-index: 1;
+  }
