@@ -44,8 +44,10 @@ export default function CategoryUpdate (props) {
     const handleUpdateCategory = event => {
         const payload = new FormData()
         payload.append("category", category)
-        api.updateAuthorById(id, payload).then(res => {
+        api.updateCategoryById(id, payload).then(res => {
             window.alert("Category Updated Suceeded")
+        }).catch(err => {
+            window.alert(err)
         })
         }
     return (

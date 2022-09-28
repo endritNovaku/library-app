@@ -59,6 +59,8 @@ class CategoryInsert extends Component {
             this.setState({
                 category: '',
             })
+        }).catch(err => {
+            window.alert(err)
         })
     }
 

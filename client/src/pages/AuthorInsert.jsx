@@ -66,6 +66,8 @@ class AuthorInsert extends Component {
                 name: '',
                 bio: '',
             })
+        }).catch(err => {
+            window.alert(err)
         })
     }
 

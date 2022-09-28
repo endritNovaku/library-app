@@ -1,4 +1,4 @@
-import React,  {useState} from 'react'
+import React,  {useState, useEffect} from 'react'
 import api from '../api'
 import { useParams } from 'react-router-dom';
 import NavBar from '../components/NavBar'
@@ -43,7 +43,7 @@ export default function BooksUpdate (props) {
     const [category, setCategory] = useState();
     const [author, setAuthor] = useState();
     const { id } = useParams()
-
+    
     const handleUpdateBook = event => {
         const payload = new FormData()
         payload.append("img", img)
@@ -53,8 +53,24 @@ export default function BooksUpdate (props) {
         payload.append("author", author)
         api.updateBookById(id, payload).then(res => {
             window.alert("Book Updated Suceeded")
+        }).catch(err => {
+            window.alert(err);
         })
         }
+        
+        useEffect(() => {
+            // Your code here
+            async function book() {
+                const book = await api.getBookById(id)
+                setName(book.data.data.name)
+                setDescription(book.data.data.description)
+                setAuthor(book.data.data.author)
+                setCategory(book.data.data.category)
+            }
+            book()
+            
+          }, []);
+
     return (
         <Wrapper>
             <NavBar />
@@ -63,6 +79,7 @@ export default function BooksUpdate (props) {
             <Label>Name: </Label>
             <InputText
                 type="text"
+                value={name}
                 onChange={event => {
                     const { value } = event.target
                     setName(value)
@@ -72,6 +89,7 @@ export default function BooksUpdate (props) {
             <Label>Author: </Label>
             <InputText
                 type="text"
+                value={author}
                 onChange={event => {
                     const { value } = event.target
                     setAuthor(value)
@@ -81,6 +99,7 @@ export default function BooksUpdate (props) {
             <Label>Description: </Label>
             <InputText
                 type="text"
+                value={description}
                 onChange={event => {
                     const { value } = event.target
                     setDescription(value)
@@ -90,6 +109,7 @@ export default function BooksUpdate (props) {
             <Label>Category: </Label>
             <InputText
                 type="text"
+                value={category}
                 onChange={event => {
                     const { value } = event.target
                     setCategory(value.split(" "))
@@ -106,7 +126,7 @@ export default function BooksUpdate (props) {
                 accept=".jpg"
             />
 
-            <Button onClick={handleUpdateBook}>Add Book</Button>
+            <Button onClick={handleUpdateBook}>Update Book</Button>
             <CancelButton href={'/admin/books/list'}>Cancel</CancelButton>
         </Wrapper>
         )

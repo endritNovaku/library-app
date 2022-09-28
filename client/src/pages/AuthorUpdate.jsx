@@ -48,6 +48,8 @@ export default function AuthorUpdate (props) {
         payload.append("bio", bio)
         api.updateAuthorById(id, payload).then(res => {
             window.alert("Author Updated Suceeded")
+        }).catch(err => {
+            window.alert(err)
         })
         }
     return (

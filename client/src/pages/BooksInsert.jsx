@@ -54,6 +54,8 @@ export default function BookInsert () {
         console.log(payload.name)
         api.InsertBook(payload).then(res => {
             window.alert("Book Created Suceeded")
+        }).catch(err => {
+            window.alert(err);
         })
         }
     return (
